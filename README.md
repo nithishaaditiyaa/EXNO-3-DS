@@ -31,7 +31,46 @@ We use this categorical data encoding technique when the features are nominal(do
 • Yeojohnson method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+
+```
+# Step 1: Import Necessary Libraries
+
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import LabelEncoder, StandardScaler, PowerTransformer
+from scipy.stats import boxcox
+
+# Step 2: Load the Dataset
+
+import pandas as pd
+
+data = pd.read_csv("Data_to_Transform.csv")
+
+print("Original Dataset:")
+print(data.head())
+```
+Original Dataset:
+   Moderate Positive Skew  Highly Positive Skew  Moderate Negative Skew  \
+0                0.899990              2.895074               11.180748   
+1                1.113554              2.962385               10.842938   
+2                1.156830              2.966378               10.817934   
+3                1.264131              3.000324               10.764570   
+4                1.323914              3.012109               10.753117   
+
+   Highly Negative Skew  
+0              9.027485  
+1              9.009762  
+2              9.006134  
+3              9.000125  
+4              8.981296
+
+```
+#Handle Missing Values (Fill numeric columns with mean)
+
+data.fillna(data.mean(numeric_only=True), inplace=True)
+
+```
+
 # RESULT:
        # INCLUDE YOUR RESULT HERE
 
